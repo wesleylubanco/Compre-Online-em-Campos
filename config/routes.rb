@@ -1,4 +1,7 @@
 Compreonline::Application.routes.draw do
+  resources :moderadors
+
+
   resources :vendedors
 
 

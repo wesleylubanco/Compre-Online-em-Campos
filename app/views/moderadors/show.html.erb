@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @moderador.nome %>
+</p>
+
+<p>
+  <b>Identidade:</b>
+  <%= @moderador.identidade %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%= @moderador.cpf %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @moderador.endereco %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%= @moderador.telefone %>
+</p>
+
+
+<%= link_to 'Edit', edit_moderador_path(@moderador) %> |
+<%= link_to 'Back', moderadors_path %>
