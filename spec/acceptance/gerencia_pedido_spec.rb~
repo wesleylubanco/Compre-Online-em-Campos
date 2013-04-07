@@ -1,0 +1,95 @@
+# coding: utf-8
+
+require 'spec_helper'
+
+feature 'gerenciar pedido' do
+
+  
+  scenario 'incluir pedido' do # , :js => true  do
+
+    cliente = FactoryGirl.create(:cliente, :nome => "x")
+    vendedor = FactoryGirl.create(:vendedor, :nome => "xx")
+    moderador = FactoryGirl.create(:moderador, :nome => "xxx")
+    produto = FactoryGirl.create(:produto, :nome => "xxxx")
+    
+    visit new_pedido_path
+
+    preencher_e_verificar_pedido
+
+    
+
+  end
+
+ scenario 'alterar pedido' do #, :js => true  do
+
+    cliente = FactoryGirl.create(:cliente, :nome => "x")
+    vendedor = FactoryGirl.create(:vendedor, :nome => "xx")
+    moderador = FactoryGirl.create(:moderador, :nome => "xxx")
+    produto = FactoryGirl.create(:produto, :nome => "xxxx")
+
+    pedido = FactoryGirl.create(:pedido, :cliente => cliente, :vendedor => vendedor, :moderador => moderador, :produto => produto)
+
+
+#    pedido = FactoryGirl.create(:pedido, :cliente => cliente)
+#    pedido = FactoryGirl.create(:pedido, :vendedor => vendedor)
+#    pedido = FactoryGirl.create(:pedido, :moderador => moderador)
+#    pedido = FactoryGirl.create(:pedido, :produto => produto)
+     
+    visit edit_pedido_path(pedido)
+
+    preencher_e_verificar_pedido
+
+ end
+
+
+
+ scenario 'excluir pedido' do #, :javascript => true  do
+
+    cliente = FactoryGirl.create(:cliente)
+    vendedor = FactoryGirl.create(:vendedor)
+    moderador = FactoryGirl.create(:moderador)
+    produto = FactoryGirl.create(:produto)
+    
+
+    pedido = FactoryGirl.create(:pedido, :cliente => cliente, :vendedor => vendedor, :moderador => moderador, :produto => produto)
+
+
+    visit pedidos_path
+
+    click_link 'Excluir'
+
+    
+
+  end
+
+
+   def preencher_e_verificar_pedido
+
+      fill_in 'Datapedido',  :with =>"x"
+      fill_in 'Quantidadeproduto', :with =>"xx"
+      fill_in 'Valordacompra', :with =>"xxx"
+      fill_in 'Formaenvio', :with =>"xxxx"
+      fill_in 'Formapagamento', :with =>"xxxxx"
+
+      select "x", :on => "Cliente"
+      select "xx", :on => "Vendedor"
+      select "xxx", :on => "Moderador"
+      select "xxxx", :on => "Produto"       
+ 
+      click_button 'Salvar'
+
+      page.should have_content 'Datapedido: x'
+      page.should have_content 'Quantidadeproduto: xx'
+      page.should have_content 'Valordacompra: xxx'
+      page.should have_content 'Formaenvio: xxxx'
+      page.should have_content 'Formapagamento: xxxxx'
+
+      page.should have_content 'Cliente: x'
+      page.should have_content 'Vendedor: xx'
+      page.should have_content 'Moderador: xxx'
+      page.should have_content 'Produto: xxxx'
+
+
+   end
+end
+

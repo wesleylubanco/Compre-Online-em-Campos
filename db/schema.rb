@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406224158) do
+ActiveRecord::Schema.define(:version => 20130407132245) do
 
   create_table "clientes", :force => true do |t|
     t.string   "nome"
@@ -30,6 +30,25 @@ ActiveRecord::Schema.define(:version => 20130406224158) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "pedidos", :force => true do |t|
+    t.string   "datapedido"
+    t.string   "quantidadeproduto"
+    t.string   "valordacompra"
+    t.string   "formaenvio"
+    t.string   "formapagamento"
+    t.integer  "cliente_id"
+    t.integer  "vendedor_id"
+    t.integer  "moderador_id"
+    t.integer  "produto_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "pedidos", ["cliente_id"], :name => "index_pedidos_on_cliente_id"
+  add_index "pedidos", ["moderador_id"], :name => "index_pedidos_on_moderador_id"
+  add_index "pedidos", ["produto_id"], :name => "index_pedidos_on_produto_id"
+  add_index "pedidos", ["vendedor_id"], :name => "index_pedidos_on_vendedor_id"
 
   create_table "produtos", :force => true do |t|
     t.string   "nome"

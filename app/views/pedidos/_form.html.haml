@@ -1,0 +1,19 @@
+= semantic_form_for [@pedido] do |form|
+ 
+  = form.input :datapedido, :label => 'Datapedido' 
+  = form.input :quantidadeproduto, :label => 'Quantidadeproduto' 
+  = form.input :valordacompra, :label => 'Valordacompra' 
+  = form.input :formaenvio, :label => 'Formaenvio' 
+  = form.input :formapagamento, :label => 'Formapagamento' 
+
+  = form.input :cliente, :member_label => :nome, :label => 'Cliente'
+  = form.input :vendedor, :member_label => :nome, :label => 'vendedor'
+  = form.input :moderador, :member_label => :nome, :label => 'moderador'
+  = form.input :produto, :member_label => :nome, :label => 'produto'
+
+
+
+
+
+
+  = form.submit 'Salvar'

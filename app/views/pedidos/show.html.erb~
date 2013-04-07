@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Datapedido:</b>
+  <%= @pedido.datapedido %>
+</p>
+
+<p>
+  <b>Quantidadeproduto:</b>
+  <%= @pedido.quantidadeproduto %>
+</p>
+
+<p>
+  <b>Valordacompra:</b>
+  <%= @pedido.valordacompra %>
+</p>
+
+<p>
+  <b>Formaenvio:</b>
+  <%= @pedido.formaenvio %>
+</p>
+
+<p>
+  <b>Formapagamento:</b>
+  <%= @pedido.formapagamento %>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%= @pedido.cliente %>
+</p>
+
+<p>
+  <b>Vendedor:</b>
+  <%= @pedido.vendedor %>
+</p>
+
+<p>
+  <b>Moderador:</b>
+  <%= @pedido.moderador %>
+</p>
+
+<p>
+  <b>Produto:</b>
+  <%= @pedido.produto %>
+</p>
+
+
+<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
+<%= link_to 'Back', pedidos_path %>
