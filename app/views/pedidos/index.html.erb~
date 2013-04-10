@@ -29,7 +29,7 @@
     <td><%= pedido.produto %></td>
     <td><%= link_to 'Show', pedido %></td>
     <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
-    <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Excluir', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

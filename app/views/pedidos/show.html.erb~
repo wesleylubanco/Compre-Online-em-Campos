@@ -32,17 +32,17 @@
 
 <p>
   <b>Vendedor:</b>
-  <%= @pedido.vendedor %>
+  <%= @pedido.vendedor.nome %>
 </p>
 
 <p>
   <b>Moderador:</b>
-  <%= @pedido.moderador %>
+  <%= @pedido.moderador.nome %>
 </p>
 
 <p>
   <b>Produto:</b>
-  <%= @pedido.produto %>
+  <%= @pedido.produto.nome %>
 </p>
 
 
