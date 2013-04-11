@@ -1,4 +1,4 @@
-<h1>Listing produtos</h1>
+<h1>Lista de Produtos</h1>
 
 <table>
   <tr>
@@ -17,13 +17,13 @@
     <td><%= produto.fabricante %></td>
     <td><%= produto.datafabricacao %></td>
     <td><%= produto.preco %></td>
-    <td><%= link_to 'Show', produto %></td>
-    <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-    <td><%= link_to 'Excluir', produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar', produto %></td>
+    <td><%= link_to 'ALterar', edit_produto_path(produto) %></td>
+    <td><%= link_to 'Excluir', produto, method: :delete, data: { confirm: 'Quer realmente excluir este produto?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Produto', new_produto_path %>
+<%= link_to 'Novo produto', new_produto_path %>

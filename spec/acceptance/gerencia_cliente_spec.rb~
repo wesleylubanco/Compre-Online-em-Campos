@@ -16,7 +16,7 @@ feature 'gerenciar cliente' do
 
   scenario 'alterar cliente' do #, :js => true  do
 
-    cliente = FactoryGirl.create(:cliente2)
+    cliente = FactoryGirl.create(:cliente)
 
     visit edit_cliente_path(cliente)
 
@@ -42,14 +42,14 @@ feature 'gerenciar cliente' do
 
       fill_in 'Nome',  :with => "Wesley"
       fill_in 'Identidade', :with =>"999999999"
-      fill_in 'Cpfcnpj', :with =>"1111111111111111111111"
+      fill_in 'CpFcnpj', :with =>"1111111111111111111111"
         
  
       click_button 'Salvar'
 
       page.should have_content 'Nome: Wesley'
       page.should have_content 'Identidade: 999999999'
-      page.should have_content 'Cpfcnpj: 1111111111111111111111'
+      page.should have_content 'CpFcnpj: 1111111111111111111111'
 
    end
 end

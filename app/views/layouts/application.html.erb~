@@ -54,7 +54,7 @@ Released : 20100529
 		</div>
 	</div>
 	<div class="container">
-              <%= yield %>
+            <h1>  <%= yield %> </h1>
 
         </div>
 		<!-- end #content -->

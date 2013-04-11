@@ -1,4 +1,4 @@
-<h1>Alterar vendedor</h1>
+<h1>Editar vendedor</h1>
 
 <%= render 'form' %>
 

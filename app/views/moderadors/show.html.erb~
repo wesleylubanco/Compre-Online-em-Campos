@@ -26,5 +26,5 @@
 </p>
 
 
-<%= link_to 'ALterar', edit_moderador_path(@moderador) %> |
-<%= link_to 'Voltar', moderadors_path %>
+<%= link_to 'Edit', edit_moderador_path(@moderador) %> |
+<%= link_to 'Back', moderadors_path %>

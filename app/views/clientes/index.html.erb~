@@ -1,10 +1,10 @@
-<h1>Listing clientes</h1>
+<h1>Relacao de clientes</h1>
 
 <table>
   <tr>
     <th>Nome</th>
     <th>Identidade</th>
-    <th>Cpfcnpj</th>
+    <th>CPF/CNPJ</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,13 +15,34 @@
     <td><%= cliente.nome %></td>
     <td><%= cliente.identidade %></td>
     <td><%= cliente.cpfcnpj %></td>
-    <td><%= link_to 'Show', cliente %></td>
-    <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-    <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Mostrar ', cliente %></td>
+    <td><%= link_to 'Editar ', edit_cliente_path(cliente) %></td>
+    <td><%= link_to 'Excluir', cliente, method: :delete, data: { confirm: 'Quer realmente apagar este cadastro?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Cliente', new_cliente_path %>
+<%= link_to 'Novo cadastro', new_cliente_path %>
+
+<div id="menu-wrapper">
+       
+		<div id="menu" class="container">
+                        
+			<ul>
+				
+				
+				
+				<li><a href="/"> Pagina Inicial </a></li>
+		                <li><%= link_to 'Novo Cliente',new_cliente_path %></li>
+                                <li><%= link_to 'Novo Vendedor',new_vendedor_path %></li>
+                                <li><%= link_to 'Novo Moderador',new_moderador_path %></li>
+                                <li><%= link_to 'Novo Produto',new_produto_path %></li>
+                                <li><%= link_to 'Novo Pedido',new_pedido_path %></li>
+                                
+
+
+			</ul>
+</div>
+

@@ -1,29 +1,7 @@
-<%= form_for(@cliente) do |f| %>
-  <% if @cliente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+= semantic_form_for [@cliente] do |form|
+ 
+  = form.input :nome, :label => 'Nome' 
+  = form.input :identidade, :label => 'Identidade'
+  = form.input :cpfcnpj, :label => 'CpFcnpj'
+  = form.submit 'Salvar'
 
-      <ul>
-      <% @cliente.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= f.label :identidade %><br />
-    <%= f.text_field :identidade %>
-  </div>
-  <div class="field">
-    <%= f.label :cpfcnpj %><br />
-    <%= f.text_field :cpfcnpj %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
